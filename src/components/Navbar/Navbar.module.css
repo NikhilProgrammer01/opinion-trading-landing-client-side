@@ -1,0 +1,114 @@
+.headerContainer {
+    background-color: #fff;
+    width: 100%;
+    box-shadow:
+      0 1px 2px #0000001a,
+      0 1px 3px #0000001a;
+  }
+  
+  .headerContent {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1272px;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+  }
+  
+  .logo {
+    color: #4318d1;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin: 0;
+  }
+  
+  .desktopNav {
+    align-items: center;
+    gap: 30px;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .desktopNav {
+      display: none;
+    }
+  }
+  
+  .navLink {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  
+  .waitlistButton {
+    color: #fff;
+    background-color: #4318d1;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  
+  .mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  @media (width<=991px) {
+    .mobileMenuButton {
+      display: block;
+    }
+  }
+  
+  .menuIcon {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .mobileNav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .mobileNavLink {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 12px 0;
+    text-decoration: none;
+  }
+  
+  .mobileWaitlistButton {
+    color: #fff;
+    background-color: #4318d1;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+  
