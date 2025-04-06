@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useAccount, useDisconnect } from "wagmi";
 import styles from "./WaitlistForm.module.css";
-import './stlye.css'
 function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [walletAddress, setWalletAddress] = useState("");
@@ -84,10 +83,10 @@ function WaitlistForm() {
               />
 
               {!isConnected ? (
-                <div className="wallet-btn">
+                <div className={styles.walletBtn}>
                   
                   <button className={styles.connectButton}>connect</button>
-                  <div className="wallet-btn-2"><appkit-button /></div>
+                  <div className={styles.walletBtn2}><appkit-button /></div>
                  
 
                 </div>
