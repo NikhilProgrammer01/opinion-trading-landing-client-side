@@ -7,7 +7,6 @@ import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 const queryClient = new QueryClient()
 
 const projectId = import.meta.env.VITE_PROJECT_ID;
-console.log(projectId,"init")
 
 const metadata = {
   name: 'Trade Opinions',
