@@ -7,13 +7,13 @@ import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 const queryClient = new QueryClient()
 
 const projectId = import.meta.env.VITE_PROJECT_ID;
-
+console.log(projectId,"init")
 
 const metadata = {
   name: 'Trade Opinions',
   description: 'Waitlist DApp',
   url: 'https://opinion-trading-landing-client-side.vercel.app/', // Must match your domain
-//   icons: ['https://yourdomain.com/icon.png'] // Optional
+  icons: ['https://fav.farm/🦊']
 }
 
 const networks = [mainnet, arbitrum]
