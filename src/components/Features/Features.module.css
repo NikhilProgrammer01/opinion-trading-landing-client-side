@@ -82,3 +82,67 @@
     line-height: 24px;
   }
   
+
+  /* animation for cards:- */
+
+  /* Flip Card Container */
+.flipCard {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+/* Front side */
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  backface-visibility: hidden;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Back side */
+.flipCardBack {
+  background-color: #4318d1;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.backTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.backDescription {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Keep mobile view simple without animation */
+@media (width <= 640px) {
+  .flipCardInner {
+    transform: none !important;
+  }
+
+  .flipCard:hover .flipCardInner {
+    transform: none !important;
+  }
+}

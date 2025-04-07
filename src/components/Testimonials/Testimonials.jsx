@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Testimonials.module.css";
 
 function Testimonials() {
+  const [activeCard, setActiveCard] = useState(null);
+  const [circlePos, setCirclePos] = useState({});
+
   const testimonials = [
     {
       id: 1,
@@ -29,21 +32,48 @@ function Testimonials() {
     },
   ];
 
+
   return (
     <section id="testimonials" className={styles.testimonialsSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>What Our Users Say</h2>
         <div className={styles.testimonialsGrid}>
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className={styles.testimonialCard}>
+            <div
+            onMouseMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty('--circle-x', `${x}px`);
+              e.currentTarget.style.setProperty('--circle-y', `${y}px`);
+            }}
+              key={testimonial.id}
+              className={`${styles.testimonialCard} ${
+                activeCard === testimonial.id ? styles.active : ""
+              }`}
+              style={
+                activeCard === testimonial.id
+                  ? {
+                      "--circle-x": `${circlePos.x}px`,
+                      "--circle-y": `${circlePos.y}px`,
+                    }
+                  : {}
+              }
+            >
               <div className={styles.testimonialContent}>
-                <p className={styles.testimonialQuote}>"{testimonial.quote}"</p>
+                <p className={styles.testimonialQuote}>
+                  "{testimonial.quote}"
+                </p>
                 <div className={styles.testimonialAuthor}>
                   <div className={styles.authorAvatar}>
-                    {testimonial.image === "URL_PROFILE1" ||
-                    testimonial.image === "URL_PROFILE2" ||
-                    testimonial.image === "URL_PROFILE3" ? (
-                      <div className={styles.avatarPlaceholder}>
+                    {["URL_PROFILE1", "URL_PROFILE2", "URL_PROFILE3"].includes(
+                      testimonial.image
+                    ) ? (
+                      <div
+                        className={styles.avatarPlaceholder}
+                    
+                        
+                      >
                         {testimonial.name.charAt(0)}
                       </div>
                     ) : (

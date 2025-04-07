@@ -1,100 +1,137 @@
+* {
+  transition: all 0.3s ease-out;
+}
+
 .howItWorksSection {
-    background-color: #fff;
-    padding-top: 80px;
-    padding-bottom: 80px;
+  background-color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (width <= 640px) {
+  .howItWorksSection {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
-  
-  @media (width<=640px) {
-    .howItWorksSection {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-  }
-  
-  .container {
-    max-width: 1272px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .content {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-  }
-  
+}
+
+.container {
+  max-width: 1272px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.content {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.title {
+  color: #111;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  margin: 0;
+}
+
+@media (width <= 640px) {
   .title {
-    color: #111;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 40px;
-    margin: 0;
+    font-size: 30px;
+    line-height: 36px;
   }
-  
-  @media (width<=640px) {
-    .title {
-      font-size: 30px;
-      line-height: 36px;
-    }
-  }
-  
+}
+
+.description {
+  color: #666;
+  max-width: 775px;
+  margin-top: 36px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (width <= 640px) {
   .description {
-    color: #666;
-    max-width: 775px;
-    margin-top: 36px;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 26px;
   }
-  
-  @media (width<=640px) {
-    .description {
-      font-size: 18px;
-      line-height: 26px;
-    }
-  }
-  
+}
+
+.cardsContainer {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 78px;
+  display: grid;
+  width: 100%;
+}
+
+@media (width <= 991px) {
   .cardsContainer {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
-    margin-top: 78px;
-    display: grid;
-    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  @media (width<=991px) {
-    .cardsContainer {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+}
+
+@media (width <= 640px) {
+  .cardsContainer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  
-  @media (width<=640px) {
-    .cardsContainer {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-  }
-  
-  .card {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 32px;
-    text-align: left;
-  }
-  
-  .cardTitle {
-    color: #111;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    margin: 0;
-  }
-  
-  .cardDescription {
-    color: #666;
-    margin-top: 19px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  
+}
+
+.card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Animated background circle */
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #4318d1;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover::before {
+  transform: scale(40); /* Covers the entire card */
+}
+
+/* Hover color transitions */
+.card:hover .cardTitle {
+  color: #ffffff;
+}
+
+.card:hover .cardDescription {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cardTitle {
+  color: #111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+  transition: all 0.3s ease-out;
+}
+
+.cardDescription {
+  color: #666;
+  margin-top: 19px;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.3s ease-out;
+}

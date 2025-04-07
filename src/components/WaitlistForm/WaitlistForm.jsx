@@ -84,11 +84,8 @@ function WaitlistForm() {
 
               {!isConnected ? (
                 <div className={styles.walletBtn}>
-                  
                   <button className={styles.connectButton}>connect</button>
                   <div className={styles.walletBtn2}><appkit-button /></div>
-                 
-
                 </div>
               ) : (
                 <button

@@ -33,15 +33,22 @@ function Features() {
         <h2 className={styles.title}>Platform Features</h2>
         <div className={styles.featuresGrid}>
           {features.map((feature) => (
-            <div key={feature.number} className={styles.featureItem}>
-              <div className={styles.featureNumber}>{feature.number}</div>
-              <div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>
-                  {feature.description}
-                </p>
-              </div>
-            </div>
+           <div key={feature.number} className={styles.featureItem}>
+           <div className={styles.flipCard}>
+             <div className={styles.flipCardInner}>
+               <div className={styles.flipCardFront}>
+                 <div className={styles.featureNumber}>{feature.number}</div>
+                 <h3 className={styles.featureTitle}>{feature.title}</h3>
+                 <p className={styles.featureDescription}>{feature.description}</p>
+               </div>
+               <div className={styles.flipCardBack}>
+                 <h3 className={styles.backTitle}>Explore more</h3>
+                 <p className={styles.backDescription}>More about {feature.title},</p>
+                 <p className={styles.backDescription}>More about {feature.description}</p>
+               </div>
+             </div>
+           </div>
+         </div>         
           ))}
         </div>
       </div>

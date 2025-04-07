@@ -15,9 +15,9 @@ function Navbar() {
         <h1 className={styles.logo}>OpinionTrade</h1>
 
         <nav className={styles.desktopNav}>
-          <a href="#features" className={styles.navLink}>
+          {/* <a href="#features" className={styles.navLink}>
             About
-          </a>
+          </a> */}
           <a href="#features" className={styles.navLink}>
             Features
           </a>
@@ -25,7 +25,8 @@ function Navbar() {
             Testimonials
           </a>
           <a href="#waitlist" className={styles.waitlistButton}>
-            Join Waitlist
+            <span>Join Waitlist</span>
+            <div className={styles.liquid}></div>
           </a>
         </nav>
 
@@ -39,9 +40,9 @@ function Navbar() {
 
         {isMenuOpen && (
           <nav className={styles.mobileNav}>
-            <a href="#about" className={styles.mobileNavLink}>
+            {/* <a href="#about" className={styles.mobileNavLink}>
               About
-            </a>
+            </a> */}
             <a href="#features" className={styles.mobileNavLink}>
               Features
             </a>
@@ -49,7 +50,8 @@ function Navbar() {
               Testimonials
             </a>
             <a href="#waitlist" className={styles.mobileWaitlistButton}>
-              Join Waitlist
+              <span>Join Waitlist</span>
+              <div className={styles.liquid}></div>
             </a>
           </nav>
         )}
